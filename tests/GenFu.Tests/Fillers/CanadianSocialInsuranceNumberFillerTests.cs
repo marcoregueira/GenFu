@@ -26,7 +26,7 @@ namespace GenFu.Tests.Fillers
         [Fact]
         public void Filler_fills()
         {
-            var sut = new CanadianSocialInsuranceNumberFiller();
+            var sut = new CanadianSocialInsuranceNumberFiller(A.GenFuInstance);
             Assert.NotNull(sut.GetValue(null) as string);
             Assert.NotEmpty(sut.GetValue(null) as string);
         }
@@ -34,7 +34,7 @@ namespace GenFu.Tests.Fillers
         [Fact]
         public void Filler_give_valid_numbers()
         {
-            var sut = new CanadianSocialInsuranceNumberFiller();
+            var sut = new CanadianSocialInsuranceNumberFiller(A.GenFuInstance);
             var result = sut.GetValue(null) as string;
 
             //adding up the digits of a social insurance number and modding by 10 should give 0

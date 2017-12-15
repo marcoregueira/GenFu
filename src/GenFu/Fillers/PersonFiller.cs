@@ -9,8 +9,8 @@ namespace GenFu.Fillers
     {
         public class SexFiller : PropertyFiller<string>
         {
-            public SexFiller()
-                : base(new[] { "object" }, new[] { "sex" })
+            public SexFiller(GenFuInstance genFu)
+                : base(genFu, new[] { "object" }, new[] { "sex" })
             {
             }
 
@@ -23,8 +23,8 @@ namespace GenFu.Fillers
 
          public class GenderFiller : PropertyFiller<string>
         {
-            public GenderFiller()
-                : base(new[] { "object" }, new[] { "gender" })
+            public GenderFiller(GenFuInstance genFu)
+                : base(genFu, new[] { "object" }, new[] { "gender" })
             {
             }
 

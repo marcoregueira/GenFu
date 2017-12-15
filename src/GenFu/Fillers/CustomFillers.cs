@@ -9,13 +9,13 @@ namespace GenFu
     {
         private Func<T> _filler;
 
-        public CustomFiller(string propertyName, Type objectType, Func<T> filler)
-            : this(propertyName, objectType, false, filler)
+        public CustomFiller(GenFuInstance genfu, string propertyName, Type objectType, Func<T> filler)
+            : this(genfu, propertyName, objectType, false, filler)
         {
         }
 
-        internal CustomFiller(string propertyName, Type objectType, bool isGeneric, Func<T> filler)
-            : base(new[] { objectType.FullName }, new[] { propertyName }, isGeneric)
+        internal CustomFiller(GenFuInstance genfu, string propertyName, Type objectType, bool isGeneric, Func<T> filler)
+            : base(genfu, new[] { objectType.FullName }, new[] { propertyName }, isGeneric)
         {
             if (objectType != typeof(Object))
                 AddAllBaseTypes(propertyName, objectType);
@@ -45,13 +45,13 @@ namespace GenFu
     {
         private Func<T1, T2> _filler;
 
-        public CustomFiller(string propertyName, Type objectType, Func<T1, T2> filler)
-            : this(propertyName, objectType, false, filler)
+        public CustomFiller(GenFuInstance genfu, string propertyName, Type objectType, Func<T1, T2> filler)
+            : this(genfu, propertyName, objectType, false, filler)
         {
         }
 
-        internal CustomFiller(string propertyName, Type objectType, bool isGeneric, Func<T1, T2> filler)
-            : base(new[] { objectType.FullName }, new[] { propertyName }, isGeneric)
+        internal CustomFiller(GenFuInstance genfu, string propertyName, Type objectType, bool isGeneric, Func<T1, T2> filler)
+            : base(genfu, new[] { objectType.FullName }, new[] { propertyName }, isGeneric)
         {
             _filler = filler;
         }

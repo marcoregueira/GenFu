@@ -7,13 +7,16 @@ namespace GenFu.ValueGenerators.Temporal
 {
     public class CalendarDate : BaseValueGenerator
     {
+        public CalendarDate(GenFuInstance genfu) : base(genfu)
+        {
+        }
 
-        public static DateTime Date(DateTime earliestDate, DateTime latestDate)
+        public DateTime Date(DateTime earliestDate, DateTime latestDate)
         {
             return DateTimeFill(earliestDate, latestDate);
         }
 
-        public static DateTime Date(DateRules rules)
+        public DateTime Date(DateRules rules)
         {
             // apply rule restrictions
             if (rules == DateRules.Within1Year)

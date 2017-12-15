@@ -8,8 +8,8 @@ namespace GenFu.Fillers
 
     class CanadianSocialInsuranceNumberFiller : PropertyFiller<String>
     {
-        public CanadianSocialInsuranceNumberFiller()
-            : base(new[] { "object" }, new[] { "SIN", "SocialInsuranceNumber" })
+        public CanadianSocialInsuranceNumberFiller(GenFuInstance genfu)
+            : base(genfu, new[] { "object" }, new[] { "SIN", "SocialInsuranceNumber" })
         { }
 
         public override object GetValue(object instance)

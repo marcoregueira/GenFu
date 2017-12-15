@@ -9,7 +9,7 @@ namespace GenFu.Tests.Fillers
         [Fact]
         void Can_get_a_value()
         {
-            var sut = new EnumFiller(typeof(BlogTypeEnum));
+            var sut = new EnumFiller(A.GenFuInstance, typeof(BlogTypeEnum));
             var result = (BlogTypeEnum)sut.GetValue(null);
             Assert.NotNull(Enum.GetName(typeof(BlogTypeEnum), result));
         }

@@ -6,8 +6,8 @@ namespace GenFu
     public class EnumFiller : PropertyFiller<Enum>
     {
         readonly Type _type;
-        public EnumFiller(Type type)
-            : base(new[] { "object" }, new[] { "*" }, true)
+        public EnumFiller(GenFuInstance genFu, Type type)
+            : base(genFu, new[] { "object" }, new[] { "*" }, true)
         {
             this._type = type;
         }
@@ -15,7 +15,7 @@ namespace GenFu
         public override object GetValue(object instance)
         {
             var values = Enum.GetValues(_type);
-            return values.GetValue(new Random().Next(values.Length-1));
+            return values.GetValue(new Random().Next(values.Length - 1));
         }
     }
 }

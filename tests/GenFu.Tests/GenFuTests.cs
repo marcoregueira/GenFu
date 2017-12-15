@@ -361,7 +361,7 @@ namespace GenFu.Tests
 
             A
                 .Configure<BlogComment>()
-                .Fill(b => b.CommentDate, delegate () { return CalendarDate.Date(DateRules.FutureDates); });
+                .Fill(b => b.CommentDate, delegate () { return new CalendarDate(A.GenFuInstance).Date(DateRules.FutureDates); });
             var comments = A.ListOf<BlogComment>();
 
             foreach (var comment in comments)
@@ -408,12 +408,12 @@ namespace GenFu.Tests
 
             A
                 .Configure<BlogPost>()
-                .Fill(b => b.CreateDate, delegate () { return CalendarDate.Date(DateRules.PastDate); })
+                .Fill(b => b.CreateDate, delegate () { return new CalendarDate(A.GenFuInstance).Date(DateRules.PastDate); })
                 .Fill(b => b.Comments, delegate ()
                 {
                     A
                         .Set<BlogComment>()
-                        .Fill(b => b.CommentDate, delegate () { return CalendarDate.Date(DateRules.PastDate); });
+                        .Fill(b => b.CommentDate, delegate () { return new CalendarDate(A.GenFuInstance).Date(DateRules.PastDate); });
                     return A.ListOf<BlogComment>();
                 });
             var blogpost = A.New<BlogPost>();
@@ -425,8 +425,8 @@ namespace GenFu.Tests
         [Fact]
         public void Should_fill_from_a_configured_list()
         {
-            GenFu.Reset();
-            GenFu.Configure<BlogPost>().Fill(x => x.Tags, new List<string> { "default" });
+            A.GenFuInstance.Reset();
+            A.GenFuInstance.Configure<BlogPost>().Fill(x => x.Tags, new List<string> { "default" });
             var result = A.New<BlogPost>();
             Assert.Equal("default", result.Tags.Single());
         }
@@ -435,8 +435,8 @@ namespace GenFu.Tests
         [Fact]
         public void Should_fill_from_a_configured_list_using_lambda()
         {
-            GenFu.Reset();
-            GenFu.Configure<BlogPost>().Fill(x => x.Tags, () => new List<string> { "default" });
+            A.GenFuInstance.Reset();
+            A.GenFuInstance.Configure<BlogPost>().Fill(x => x.Tags, () => new List<string> { "default" });
             var result = A.New<BlogPost>();
             Assert.Equal("default", result.Tags.Single());
         }
@@ -444,8 +444,8 @@ namespace GenFu.Tests
         [Fact]
         public void Should_fill_a_list_of_objects_from_a_configured_list_using_lambda()
         {
-            GenFu.Reset();
-            GenFu.Configure<BlogPost>().Fill(x => x.Tags, () => new List<string> { "default" });
+            A.GenFuInstance.Reset();
+            A.GenFuInstance.Configure<BlogPost>().Fill(x => x.Tags, () => new List<string> { "default" });
             var results = A.ListOf<BlogPost>(5);
             foreach (var result in results)
                 Assert.Equal("default", result.Tags.Single());
@@ -462,7 +462,7 @@ namespace GenFu.Tests
                {
                    A
                       .Configure<BlogComment>()
-                      .Fill(b => b.CommentDate, delegate () { return CalendarDate.Date(DateRules.PastDate); });
+                      .Fill(b => b.CommentDate, delegate () { return new CalendarDate(A.GenFuInstance).Date(DateRules.PastDate); });
                    return A.ListOf<BlogComment>();
                });
             var blogposts = A.ListOf<BlogPost>();

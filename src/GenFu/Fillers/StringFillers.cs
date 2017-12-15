@@ -7,8 +7,8 @@ namespace GenFu
 {
     public class StringFiller : PropertyFiller<string>
     {
-        public StringFiller()
-            : base(new[] { "object" }, new[] { "*" }, true)
+        public StringFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "*" }, true)
         {
         }
 
@@ -19,8 +19,8 @@ namespace GenFu
     }
     public class ArticleTitleFiller : PropertyFiller<string>
     {
-        public ArticleTitleFiller()
-            : base(new[] { "object" }, new[] { "title" })
+        public ArticleTitleFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "title" })
         {
         }
 
@@ -32,8 +32,8 @@ namespace GenFu
 
     public class FirstNameFiller : PropertyFiller<string>
     {
-        public FirstNameFiller()
-            : base(new[] { "object" }, new[] { "firstname", "fname", "first_name" })
+        public FirstNameFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "firstname", "fname", "first_name" })
         {
         }
 
@@ -45,8 +45,8 @@ namespace GenFu
 
     public class PersonTitleFiller : PropertyFiller<string>
     {
-        public PersonTitleFiller()
-            : base(new[] { "person", "employee", "user" }, new[] { "title" })
+        public PersonTitleFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "person", "employee", "user" }, new[] { "title" })
         {
         }
 
@@ -58,8 +58,8 @@ namespace GenFu
 
     public class LastNameFiller : PropertyFiller<string>
     {
-        public LastNameFiller()
-            : base(new[] { "object" }, new[] { "lastname", "lname", "last_name" })
+        public LastNameFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "lastname", "lname", "last_name" })
         {
         }
 
@@ -71,8 +71,8 @@ namespace GenFu
 
     public class EmailFiller : PropertyFiller<string>
     {
-        public EmailFiller()
-            : base(new[] { "object" }, new[] { "email", "emailaddress", "email_address" })
+        public EmailFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "email", "emailaddress", "email_address" })
         {
         }
 
@@ -84,8 +84,8 @@ namespace GenFu
 
     public class TwitterFiller : PropertyFiller<string>
     {
-        public TwitterFiller()
-            : base(new[] { "object" }, new[] { "twitter", "twitterhandle", "twitter_handle", "twittername" })
+        public TwitterFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "twitter", "twitterhandle", "twitter_handle", "twittername" })
         {
         }
 
@@ -97,8 +97,8 @@ namespace GenFu
 
     public class AddressFiller : PropertyFiller<string>
     {
-        public AddressFiller()
-            : base(new[] { "object" }, new[] { "address", "address1", "address_1", "billingaddress", "billing_address" })
+        public AddressFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "address", "address1", "address_1", "billingaddress", "billing_address" })
         {
         }
 
@@ -110,8 +110,8 @@ namespace GenFu
 
     public class AddressLine2Filler : PropertyFiller<string>
     {
-        public AddressLine2Filler()
-            : base(new[] { "object" }, new[] { "address2", "address_2" })
+        public AddressLine2Filler(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "address2", "address_2" })
         {
         }
 
@@ -123,8 +123,8 @@ namespace GenFu
 
     public class CityFiller : PropertyFiller<string>
     {
-        public CityFiller()
-            : base(new[] { "object" }, new[] { "city", "cityname", "city_name" })
+        public CityFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "city", "cityname", "city_name" })
         {
         }
 
@@ -136,8 +136,8 @@ namespace GenFu
 
     public class StateFiller : PropertyFiller<string>
     {
-        public StateFiller()
-            : base(new[] { "object" }, new[] { "state", "statename", "state_name" })
+        public StateFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "state", "statename", "state_name" })
         {
         }
 
@@ -149,8 +149,8 @@ namespace GenFu
 
     public class StateAbreviationFiller : PropertyFiller<string>
     {
-        public StateAbreviationFiller()
-            : base(new[] { "object" }, new[] { "stateAbreviation" })
+        public StateAbreviationFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "stateAbreviation" })
         {
         }
 
@@ -163,8 +163,8 @@ namespace GenFu
 
     public class ProvinceFiller : PropertyFiller<string>
     {
-        public ProvinceFiller()
-            : base(new[] { "object" }, new[] { "province", "provincename", "province_name" })
+        public ProvinceFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "province", "provincename", "province_name" })
         {
         }
 
@@ -176,8 +176,8 @@ namespace GenFu
 
     public class ZipCodeFiller : PropertyFiller<string>
     {
-        public ZipCodeFiller()
-            : base(new[] { "object" }, new[] { "zip", "zipcode", "zip_code" })
+        public ZipCodeFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "zip", "zipcode", "zip_code" })
         {
         }
 
@@ -189,8 +189,8 @@ namespace GenFu
 
     public class PostalCodeFiller : PropertyFiller<string>
     {
-        public PostalCodeFiller()
-            : base(new[] { "object" }, new[] { "postalcode", "postal_code" })
+        public PostalCodeFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "postalcode", "postal_code" })
         {
         }
 
@@ -202,8 +202,8 @@ namespace GenFu
 
     public class PhoneNumberFiller : PropertyFiller<string>
     {
-        public PhoneNumberFiller()
-            : base(new[] { "object" }, new[] { "fax", "phone", "phonenumber", "phone_number", "homenumber", "worknumber" })
+        public PhoneNumberFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "fax", "phone", "phonenumber", "phone_number", "homenumber", "worknumber" })
         {
         }
 
@@ -215,8 +215,8 @@ namespace GenFu
 
     public class MusicAlbumTitleFiller : PropertyFiller<string>
     {
-        public MusicAlbumTitleFiller()
-            : base(new[] { "album", "musicalbum", "music_album" }, new[] { "title", "albumname", "name" })
+        public MusicAlbumTitleFiller(GenFuInstance genfu)
+            : base(genfu, new[] { "album", "musicalbum", "music_album" }, new[] { "title", "albumname", "name" })
         {
         }
 
@@ -228,8 +228,8 @@ namespace GenFu
 
     public class MusicArtistNameFiller : PropertyFiller<string>
     {
-        public MusicArtistNameFiller()
-            : base(new[] { "artist" }, new[] { "name", "artistname", "artist_name" })
+        public MusicArtistNameFiller(GenFuInstance genfu)
+            : base(genfu, new[] { "artist" }, new[] { "name", "artistname", "artist_name" })
         {
         }
 
@@ -241,8 +241,8 @@ namespace GenFu
 
     public class MusicGenreNameFiller : PropertyFiller<string>
     {
-        public MusicGenreNameFiller()
-            : base(new[] { "genre", "musicgenre", "music_genre" }, new[] { "title", "name", "genre_title", "genre_name" })
+        public MusicGenreNameFiller(GenFuInstance genfu)
+            : base(genfu, new[] { "genre", "musicgenre", "music_genre" }, new[] { "title", "name", "genre_title", "genre_name" })
         {
         }
 
@@ -254,8 +254,8 @@ namespace GenFu
 
     public class MusicGenreDescriptionFiller : PropertyFiller<string>
     {
-        public MusicGenreDescriptionFiller()
-            : base(new[] { "genre", "musicgenre", "music_genre" }, new[] { "description", "desc", "genre_description", "genre_desc" })
+        public MusicGenreDescriptionFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "genre", "musicgenre", "music_genre" }, new[] { "description", "desc", "genre_description", "genre_desc" })
         {
         }
 

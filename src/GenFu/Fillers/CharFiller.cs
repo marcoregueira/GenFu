@@ -7,31 +7,31 @@ namespace GenFu.Fillers
     public class CharFiller : PropertyFiller<char>
     {
 
-        public CharFiller() : base(new[] { "object" }, new[] { "*" }, true)
+        public CharFiller(GenFuInstance genFu) : base(genFu, new[] { "object" }, new[] { "*" }, true)
         {
 
         }
 
-        public CharFiller(Type objectType, string propertyName) : base(new[] { objectType.FullName }, new[] { propertyName })
+        public CharFiller(GenFuInstance genFu, Type objectType, string propertyName) : base(genFu, new[] { objectType.FullName }, new[] { propertyName })
         {
 
         }
 
         public override object GetValue(object instance)
         {
-            return (char)GenFu.Random.Next(char.MinValue, char.MaxValue);
+            return (char)this.GenFu.Random.Next(char.MinValue, char.MaxValue);
         }
     }
 
     public class NullableCharFiller : PropertyFiller<char?>
     {
 
-        public NullableCharFiller() : base(new[] { "object" }, new[] { "*" }, true)
+        public NullableCharFiller(GenFuInstance genFu) : base(genFu, new[] { "object" }, new[] { "*" }, true)
         {
 
         }
 
-        public NullableCharFiller(Type objectType, string propertyName) : base(new[] { objectType.FullName }, new[] { propertyName })
+        public NullableCharFiller(GenFuInstance genFu, Type objectType, string propertyName) : base(genFu, new[] { objectType.FullName }, new[] { propertyName })
         {
 
         }

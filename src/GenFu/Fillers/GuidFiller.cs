@@ -4,8 +4,8 @@ namespace GenFu.Fillers
 {
     class GuidFiller:PropertyFiller<Guid>
     {
-        public GuidFiller()
-            : base(new[] { "object" }, new[] { "*" }, true)
+        public GuidFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "*" }, true)
         { }
 
         public override object GetValue(object instance)

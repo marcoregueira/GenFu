@@ -6,8 +6,8 @@ namespace GenFu.Fillers
 { 
     public class DrugFiller : PropertyFiller<string>
     {
-        public DrugFiller()
-            : base(new[] { "object" }, new[] { "drug", "drugs", "Rx", "perscription" })
+        public DrugFiller(GenFuInstance genFu)
+            : base(genFu, new[] { "object" }, new[] { "drug", "drugs", "Rx", "perscription" })
         {
         }
 
