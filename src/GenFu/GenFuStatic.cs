@@ -14,12 +14,21 @@ namespace GenFu
     public abstract partial class GenFu
     {
         private static GenFuInstance GenFuLocal;
-
-        public static GenFuInstance GenFuInstance { get {
+        private static object locker = new object();
+        public static GenFuInstance GenFuInstance
+        {
+            get
+            {
                 if (GenFuLocal == null)
-                    GenFuLocal = new GenFuInstance();
+                    lock (locker)
+                    {
+                        if (GenFuLocal == null)
+                            GenFuLocal = new GenFuInstance();
+                    }
 
-                return GenFuLocal; } }
+                return GenFuLocal;
+            }
+        }
 
         public static GenFuInstance GetFiller()
         {
