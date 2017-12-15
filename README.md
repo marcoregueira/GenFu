@@ -1,6 +1,6 @@
 GenFu 
 ===========
-If you're looking for GenFu, please check to the official repo...
+If you're looking for GenFu, please check the official repo...
 http://genfu.io/ 
 
 
