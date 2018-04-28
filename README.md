@@ -3,9 +3,11 @@ GenFu
 If you're looking for GenFu, please check the official repo...
 http://genfu.io/ 
 
-
-
 This fork allows GenFu instantiation and multithreading, making it more reliable for unit testing and web scenarios.
+
+You can install it from NuGet (by now):
+https://www.nuget.org/packages/GenFu.Instantiable.NonOfficial/
+
 
 ```
 var childGenerator = new GenFuInstance();
@@ -28,3 +30,6 @@ Classic static usage still works, but now it is usable in concurrent scenarios. 
                });
         }
 ```
+To Do
+---
+It would be great being able to clone instances or use scopes, somehow, allowing temporary change a rule from a previous definition.
